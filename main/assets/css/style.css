@@ -1126,3 +1126,76 @@ footer {
     display: inline-block;
     margin-right: 5px;
 }
+
+.headers_item {
+    margin-top: 5%;
+    display: flex;
+    align-items: start;
+}
+
+.headers_item img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.headers_info_wrapper {
+    margin-left: 20px;
+}
+
+.headers_detail_link {
+    font-size: var(--size-text-large);
+    color: var(--color-dark);
+    font-family: 'Roboto M';
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.headers_detail_link:hover {
+    text-decoration: underline;
+}
+
+.headers-mayor_fullname {
+    margin: 20px 0 10px 0;
+    font-size: var(--size-text-large);
+    font-family: 'Roboto B';
+    font-weight: normal;
+    color: var(--color-primary);
+}
+
+.headers-info {
+    margin: 10px 0;
+}
+
+.headers-info {
+    color: var(--color-dark);
+}
+
+.headers-info b {
+    font-weight: normal;
+    font-family: 'Roboto M';
+}
+
+.headers-info a {
+    color: var(--color-primary);
+}
+
+.headers-info a:hover {
+    text-decoration: underline;
+}
+
+.headers-contact_link {
+    padding: 10px 20px;
+    background: var(--color-primary);
+    border-radius: 30px;
+    font-size: var(--size-text-small);
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--color-white) !important;
+}
+
+.headers-contact_link:hover {
+    text-decoration: none !important;
+    transform: scale(0.9);
+    background: var(--color-gray);
+    color: var(--color-primary) !important;
+}
