@@ -1199,3 +1199,55 @@ footer {
     background: var(--color-gray);
     color: var(--color-primary) !important;
 }
+
+.detailer_body b {
+    font-family: 'Roboto M';
+    font-weight: normal;
+}
+
+.detailer_body a {
+    color: var(--color-primary);
+}
+
+.detailer_body h1,
+.detailer_body h2,
+.detailer_body h3,
+.detailer_body h4,
+.detailer_body h5,
+.detailer_body h6 {
+    font-family: 'Roboto B';
+    font-weight: normal;
+}
+
+.detailer_body h1 {
+    font-size: var(--size-heading);
+}
+
+.detailer_body h2 {
+    font-size: var(--size-heading-small);
+}
+
+.detailer_body h3 {
+    font-size: var(--size-text-large);
+}
+
+.detailer_body h4 {
+    font-size: var(--size-text);
+}
+
+.detailer_body h5 {
+    font-size: var(--size-text-small);
+}
+
+.detailer_body u {
+    text-decoration: underline !important;
+}
+
+.detailer_body del,
+.detailer_body strike {
+    text-decoration: line-through !important;
+}
+
+.detailer_body a:hover {
+    text-decoration: underline;
+}
