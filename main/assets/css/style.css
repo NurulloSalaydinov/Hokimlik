@@ -586,6 +586,7 @@
 .main-hero_action_post a {
     display: flex;
     align-items: center;
+    font-size: var(--size-text-small);
     color: var(--color-dark);
 }
 
