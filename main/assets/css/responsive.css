@@ -28,6 +28,10 @@
         --size-heading-large: 38px;
         --size-heading-small: 28px;
     }
+
+    .main-hero_action_post {
+        width: 45%;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -83,6 +87,17 @@
     }
 }
 
+@media screen and (max-width: 850px) {
+    .news_list {
+        flex-wrap: wrap;
+    }
+
+    .news_item {
+        width: 30%;
+        margin-top: 5%;
+    }
+}
+
 @media screen and (max-width: 800px) {
     :root {
         --size-text: 18px;
@@ -117,10 +132,6 @@
     .news_item {
         width: 30%;
         margin-top: 5%;
-    }
-
-    .news_item:nth-child(1) {
-        margin-top: 0;
     }
 
     .nav_sidebar {
@@ -187,6 +198,10 @@
         height: 1px;
         left: 0;
         top: 0;
+    }
+
+    .main-hero_numbers_item {
+        padding: 12px;
     }
 }
 
