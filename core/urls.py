@@ -5,7 +5,6 @@ from django.conf import settings
 from common.views import hello
 
 urlpatterns = [
-    path('api/v1/cost-info/', hello, name='hello'),
     path('admin/', admin.site.urls),
 ]
 
