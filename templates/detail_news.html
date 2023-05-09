@@ -7,13 +7,11 @@
                 <div class="wrapper_sidebar_section main" id="main-content">
                     <div class="nav_sidebar sidebar" id="sidebar">
                         <ul class="nav_link_list">
-                            {% for sub in subcategories %}
                             <li class="nav_link_item">
-                                <a href="{{ sub.get_absolute_url }}">
-                                    {{ sub.title }}
+                                <a href="{% url 'common:news' %}">
+                                    Yangiliklar
                                 </a>
                             </li>
-                            {% endfor %}
                         </ul>
                     </div>
 
@@ -24,13 +22,8 @@
                                     <a href="#">Bosh sahifa</a>
                                 </span>
                                 <span class="link">
-                                    <a href="#">
-                                        <i class="fa-regular fa-chevrons-right"></i> {{ detail.subcategory.category.title }}
-                                    </a>
-                                </span>
-                                <span class="link">
-                                    <a href="#">
-                                        <i class="fa-regular fa-chevrons-right"></i> {{ detail.subcategory.title }}
+                                    <a href="/news/">
+                                        <i class="fa-regular fa-chevrons-right"></i> Yangiliklar
                                     </a>
                                 </span>
                                 <span class="link">

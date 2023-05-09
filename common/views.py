@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Category, SubCategory, News, People, Pdf, Detail
+from .models import Category, SubCategory, News, People, Pdf, Detail, PdfNews
 
 
 def home_view(request):
@@ -49,4 +49,24 @@ def detail(request, slug):
         'pdf': pdf
     }
     return render(request, 'detail_post.html', context)
+
+
+def news_list(request):
+    news = News.objects.all()
+    context = {
+        'news': news
+    }
+    return render(request, 'news.html', context)
+
+
+def news_detail(request, slug):
+    detail = get_object_or_404(News, slug=slug)
+    pdf = PdfNews.objects.filter(news=detail).first()
+    detail.views_count += 1
+    detail.save()
+    context = {
+        'detail': detail,
+        'pdf': pdf
+    }
+    return render(request, 'detail_news.html', context)
 

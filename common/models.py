@@ -99,7 +99,7 @@ class News(models.Model):
     created_at = models.DateField(auto_now_add=True)
     
     def get_absolute_url(self):
-        return "/hello"
+        return reverse('common:news_detail', kwargs={'slug': self.slug})
         # return reverse("model_detail", kwargs={"pk": self.pk})
 
     def __str__(self):
