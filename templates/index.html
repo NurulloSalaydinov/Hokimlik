@@ -1,0 +1,154 @@
+{% extends 'wrapper.html' %}
+
+{% block content %}
+    <main>
+        <div class="main-hero">
+            <div class="section-wrapp">
+                <div class="container">
+                    <div class="main-hero_wrapper">
+                        <div class="main-hero_post_wrapper">
+                            <div class="main-hero_post">
+                                <img src="{{ latest_new.image.url }}" alt="">
+                                <p class="main-hero_post_date">
+                                    <i class="fa-regular fa-clock"></i> {{ latest_new.created_at }}
+                                </p>
+                                <h1 class="main-hero_post_title">
+                                    <a href="{{ latest_new.get_absolute_url }}">
+                                        {{ latest_new.title }}
+                                    </a>
+                                </h1>
+                            </div>
+
+                            <div class="main-hero_posts_wrapper">
+                                {% for new in news %}
+                                <div class="main-hero_smaller_post">
+                                    <img src="{{ new.image.url }}" alt="">
+                                    <p class="main-hero_smaller_post_date">
+                                        <i class="fa-regular fa-clock"></i> {{ new.created_at }}
+                                    </p>
+                                    <h1 class="main-hero_smaller_post_title">
+                                        <a href="{{ new.get_absolute_url }}">
+                                            {{ new.title }}
+                                        </a>
+                                    </h1>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="main-hero_side_bar_slider">
+                            <h1 class="wrapper_title">
+                                RAHBARIYAT
+                            </h1>
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    {% for govern in governors %}
+                                    <div class="swiper-slide">
+                                        <div class="main-hero_head_wrapper">
+                                            <img src="{{ govern.image.url }}" alt="{{ govern.who }}">
+                                            <div class="main-hero_head_title">
+                                                {{ govern.who }}
+                                            </div>
+                                            <div class="main-hero_head_info">
+                                                {{ govern.content|safe }}
+                                            </div>
+                                            <a href="#" class="main-hero_contact_link" role="button">Murojaat
+                                                yuborish</a>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <div class="swiper-button-prev">
+                                    <i class="fa-regular fa-chevron-left"></i>
+                                </div>
+                                <div class="swiper-button-next">
+                                    <i class="fa-regular fa-chevron-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main-hero_actions">
+                        <div class="main-numbers">
+                            <div class="section-wrapp">
+                                <div class="number_container">
+                                    <div class="main-numbers_wrapper">
+                                        <ul class="main-hero_numbers_list">
+                                            <li class="main-hero_numbers_item left">
+                                                <h3 class="main-hero_info_title">ISHONCH TELEFONI</h3>
+                                                <h1 class="main-hero_number">
+                                                    (0 371)
+                                                    200 88 11
+                                                </h1>
+                                            </li>
+                                            <li class="main-hero_numbers_item right">
+                                                <h3 class="main-hero_info_title">YAGONA TELEFON</h3>
+                                                <h1 class="main-hero_number">
+                                                    (0 371)
+                                                    200 88 11
+                                                </h1>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-hero_side_bar_slider">
+                            <h1 class="wrapper_title small">
+                                AXBOROT XIZMATI RAHBARI
+                            </h1>
+                            <div class="swiper_second">
+                                <div class="swiper-wrapper">
+                                    {% for peop in news_people %}
+                                    <div class="swiper-slide">
+                                        <div class="main-hero_head_wrapper">
+                                            <img src="{{ peop.image.url }}" alt="{{ peop.who }}">
+                                            <div class="main-hero_head_title">
+                                                {{ peop.who }}
+                                            </div>
+                                            <div class="main-hero_head_info">
+                                                {{ peop.content|safe }}
+                                            </div>
+                                            <a href="#" class="main-hero_contact_link" role="button">Murojaat
+                                                yuborish</a>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <div class="swiper-button-prev">
+                                    <i class="fa-regular fa-chevron-left"></i>
+                                </div>
+                                <div class="swiper-button-next">
+                                    <i class="fa-regular fa-chevron-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <div class="news">
+            <div class="section-wrapp">
+                <div class="container">
+                    <h1 class="wrapper_title">O` ZBEKISTON YANGILIKLARI</h1>
+                    <ul class="news_list">
+                        {% for uz_new in uzbek_news %}
+                        <li class="news_item">
+                            <img src="{{ uz_new.image.url }}" alt="">
+                            <p class="news_date"><i class="fa-regular fa-clock"></i> {{ uz_new.created_at }}</p>
+                            <h1 class="news_link">
+                                <a href="{{ uz_new.get_absolute_url }}">
+                                    {{ uz_new.title }}
+                                </a>
+                            </h1>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {% endblock content %}

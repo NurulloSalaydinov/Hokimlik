@@ -1,0 +1,65 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block content %}
+    <main>
+        <div class="cat-hero">
+            <div class="section-wrapp">
+                <div class="container">
+                    <div class="wrapper_sidebar_section main" id="main-content">
+                        <div class="nav_sidebar sidebar" id="sidebar">
+                            <ul class="nav_link_list">
+                                {% for sub in subcategories %}
+                                <li class="nav_link_item">
+                                    <a href="{{ sub.get_absolute_url }}">
+                                        {{ sub.title }}
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <ul class="cat_list content" id="content">
+                            <li>
+                                <div class="links">
+                                    <span class="link">
+                                        <a href="#">Bosh sahifa</a>
+                                    </span>
+                                    <span class="link currently">
+                                        <i class="fa-regular fa-chevrons-right"></i> {{ obj.category.title }}
+                                        <i class="fa-regular fa-chevrons-right"></i> {{ obj.title }}
+                                    </span>
+                                </div>
+                            </li>
+                            <h1 class="detail-heading">{{ obj.title }}</h1>
+
+                            {% for detail in details %}
+                            <li class="cat_item">
+                                <img src="{{ detail.image.url }}" alt="{{ detail.title }}">
+
+                                <div class="cat_info_wrapper">
+                                    <a href="{{ detail.get_absolute_url }}" class="cat_detail_link">
+                                        {{ detail.title }}
+                                    </a>
+                                    <p class="cat_body">
+                                        {{ detail.content|slice:"200"|safe }}...
+                                    </p>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <script src="{% static 'assets/lib/js/sticky.js' %}"></script>
+    <script type="text/javascript">
+        var a = new StickySidebar('#sidebar', {
+            topSpacing: 50,
+            bottomSpacing: -20,
+            containerSelector: '.container',
+            innerWrapperSelector: '.sidebar__inner'
+        });
+    </script>
+    {% endblock content %}

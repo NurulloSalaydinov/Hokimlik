@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import People, Category, SubCategory, Detail, News, Pdf
+from .models import People, Category, SubCategory, Detail, News, Pdf, PdfNews
 
 
 @admin.register(People)
@@ -46,6 +46,15 @@ class PdfAdmin(admin.ModelAdmin):
     list_display_links = ('id', 'title')
     list_filter = ('detail',)
     search_fields = ('title',)
+
+
+@admin.register(PdfNews)
+class PdfNewsAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title')
+    list_display_links = ('id', 'title')
+    list_filter = ('news',)
+    search_fields = ('title',)
+
 
 
 @admin.register(News)

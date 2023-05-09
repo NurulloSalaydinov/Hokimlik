@@ -54,6 +54,33 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+X_FRAME_OPTIONS = 'SAMEORIGIN' 
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'UltraFull',
+        'height': 300,
+        'toolbar_UltraFull': [
+            ['Font', 'FontSize', 'Format'],
+            ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'],
+            [
+                'NumberedList', 'BulletedList', '-',
+                'Outdent', 'Indent', '-',
+                'Blockquote', '-',
+                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'
+            ],
+            ['Link', 'Unlink', 'Anchor'],
+            ['Image', 'Flash', 'Table', 'HorizontalRule', 'PageBreak', 'Smiley', 'SpecialChar'],
+            ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'],
+            ['TextColor', 'BGColor'],
+            ['Maximize', 'Source'],
+        ],
+        'language': 'ru',
+        'forcePasteAsPlainText': True,
+    },
+}
+
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
@@ -67,6 +94,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'common.context_pro.context_pro_category'
             ],
         },
     },

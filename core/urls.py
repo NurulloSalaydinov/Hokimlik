@@ -15,8 +15,8 @@ urlpatterns += i18n_patterns(
     path('', include('common.urls', namespace='common')),
 )
 
-admin.site.site_header = 'Andijon Shahar hokimligi'             # default: "Django Administration"
-admin.site.index_title = 'Admin Panel'                          # default: "Site administration"
+admin.site.site_header = 'Andijon Shahar'             # default: "Django Administration"
+admin.site.index_title = 'Andijon Shahar hokimligi'                          # default: "Site administration"
 admin.site.site_title = 'Andijon Shahar hokimligi admin paneli' # default: "Django site admin"
 
 if settings.DEBUG:
