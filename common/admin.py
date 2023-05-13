@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import People, Category, SubCategory, Detail, News, Pdf, PdfNews
+from .models import People, Category, SubCategory, Detail, News, Pdf, PdfNews, Contact
 
 
 @admin.register(People)
@@ -64,4 +64,13 @@ class NewsAdmin(admin.ModelAdmin):
     list_filter = ('is_uzbek',)
     search_fields = ('title', 'content')
     prepopulated_fields = {'slug': ('title',)}
+
+
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('full_name', 'email', 'phone', 'date')
+    list_display_links = ('full_name',)
+    list_filter = ('businessman', 'province_select', 'job', 'date')
+    search_fields = ('full_name', 'description')
 

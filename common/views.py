@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Category, SubCategory, News, People, Pdf, Detail, PdfNews
+from .forms import ContactForm
+from django.contrib import messages
 
 
 def home_view(request):
@@ -69,4 +71,15 @@ def news_detail(request, slug):
         'pdf': pdf
     }
     return render(request, 'detail_news.html', context)
+
+
+def contact(request):
+    form = ContactForm()
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Muvaffaqiyatli yuborildi, tez orada siz bilan bog'lanishadi!")
+            return redirect('/')
+    return render(request, 'contact.html', {'form': form})
 

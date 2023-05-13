@@ -122,3 +122,52 @@ class PdfNews(models.Model):
         verbose_name = 'PDF Fayl (Yangiliklar uchun)'
         verbose_name_plural = 'PDF Fayllar (Yangiliklar uchun)'
 
+
+class Contact(models.Model):
+    PROVINCES = (
+        ('Andijon viloyati', 'Andijon viloyati'),
+        ('Toshkent viloyati', 'Toshkent viloyati'),
+        ('Buhoro viloyati', 'Buhoro viloyati'),
+        ('Jizzax viloyati', 'Jizzax viloyati'),
+        ('Qashqadaryo viloyati', 'Qashqadaryo viloyati'),
+        ('Namangan viloyati', 'Namangan viloyati'),
+        ('Samarqand viloyati', 'Samarqand viloyati'),
+        ('Surxondaryo viloyati', 'Surxondaryo viloyati'),
+        ('Sirdaryo viloyat', 'Sirdaryo viloyat'),
+        ('Farg`ona viloyati', 'Farg`ona viloyati'),
+        ('Xorazm viloyati', 'Xorazm viloyati'),
+        ('Navoi viloyati', 'Navoi viloyati'),
+        ('Qoraqalpog`iston viloyati', 'Qoraqalpog`iston viloyati'),
+    )
+    WORKERTYPES = (
+        ('Jismoniy shaxs', 'Jismoniy shaxs'),
+        ('Yakka tartibdagi tadbirkor', 'Yakka tartibdagi tadbirkor'),
+        ('Yuridik shaxs', 'Yuridik shaxs'),
+    )
+    GENDER = (
+        ('Erkak', 'Erkak'),
+        ('Ayol', 'Ayol'),
+    )
+    JOB = (
+        ('Ish bilan taminlangan', 'Ish bilan taminlangan'),
+        ('Ishsiz', 'Ishsiz'),
+        ('Nafaqada', 'Nafaqada'),
+        ('Talaba', 'Talaba'),
+    )
+    full_name = models.CharField(verbose_name='F.I.SH', max_length=255)
+    businessman = models.CharField(verbose_name='Yuridik shaxs nomi(Tadbirkor)', max_length=255)
+    email = models.EmailField(verbose_name='Elektron manzil', max_length=255)
+    phone = models.CharField(verbose_name='Telefon raqam', max_length=50)
+    province_select = models.CharField(verbose_name='Viloyat', max_length=255, choices=PROVINCES)
+    province = models.CharField(verbose_name='Viloyat', max_length=255)
+    address =  models.CharField(verbose_name='Manzil', max_length=255)
+    work_type = models.CharField(verbose_name='Shaxs', max_length=255, choices=WORKERTYPES)
+    gender = models.CharField(verbose_name='Jinsi', max_length=255, choices=GENDER)
+    birthday = models.CharField(verbose_name='Tugilgan kun', max_length=255)
+    job = models.CharField(verbose_name='Hozirgi kasb holati', max_length=255, choices=JOB)
+    description = models.CharField(verbose_name='Murojaatnoma', max_length=500)
+    date = models.DateTimeField(verbose_name='Sana', auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.full_name}"
+
