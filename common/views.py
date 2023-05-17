@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.db.models import Q
+from django.contrib import messages
+from django.utils.translation import gettext_lazy as _
 from .models import Category, SubCategory, News, People, Pdf, Detail, PdfNews
 from .forms import ContactForm
-from django.contrib import messages
 
 
 def home_view(request):
@@ -79,7 +81,19 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Muvaffaqiyatli yuborildi, tez orada siz bilan bog'lanishadi!")
+            messages.success(request, _("Muvaffaqiyatli yuborildi, tez orada siz bilan bog'lanishadi!"))
             return redirect('/')
     return render(request, 'contact.html', {'form': form})
 
+
+def search_results(request):
+    q = request.GET.get('q', '')
+    detail_list = Detail.objects.filter(Q(title__icontains=q) | Q(content__icontains=q))
+    news_list = News.objects.filter(Q(title__icontains=q) | Q(content__icontains=q))
+    subcategories = SubCategory.objects.all()[:6]
+    context = {
+        'detail_list': detail_list,
+        'news_list': news_list,
+        'subcategories': subcategories
+    }
+    return render(request, 'search_results.html', context)

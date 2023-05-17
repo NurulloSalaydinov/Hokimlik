@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="shortcut icon" href="{% static 'assets/img/logo.png' %}" type="image/x-icon">
-    <title>ANDIJON TUMANI HOKIMLIGI</title>
+    <title>{% trans 'ANDIJON TUMANI HOKIMLIGI' %} {% block title %}{% endblock %}</title>
 </head>
 
 <body>
@@ -36,7 +36,7 @@
                             </a>
                             <a href="#">
                                 <i class="fa-regular fa-volume"></i>
-                                Ovozli matn
+                                {% trans 'Ovozli matn' %}
                             </a>
                         </div>
                     </div>
@@ -49,20 +49,20 @@
                     <div class="header_logo">
                         <a href="/">
                             <img src="{% static 'assets/img/logo.png' %}" alt="">
-                            ANDIJON SHAXAR HOKIMLIGI
+                            {% trans 'ANDIJON SHAXAR HOKIMLIGI' %}
                         </a>
                     </div>
 
                     <div class="header_settings">
-                        <form action="{% url 'common:set_language' %}" method="get">
-                            <div class="header_form_selection">
+                        <div style="display:flex">
+                            <form action="{% url 'common:set_language' %}" method="get" class="header_form_selection">
                                 {% get_current_language as LANGUAGE_CODE %}
                                 {% if LANGUAGE_CODE == 'ru' %}
                                 <img class="header_lang_img" src="{% static 'assets/ru.png' %}" alt="">
                                 {% else %}
                                 <img class="header_lang_img" src="{% static 'assets/uz.png' %}" alt="">
                                 {% endif %}
-                                <select onchange="this.parentElement.parentElement.submit()" name="language" id="language">
+                                <select onchange="this.parentElement.submit()" name="language" id="language">
                                     {% get_available_languages as LANGUAGES %}
                                     {% get_language_info_list for LANGUAGES as languages %}
                                     {% for language in languages %}
@@ -73,19 +73,19 @@
                                     <!-- <option value="uz" selected>Uz</option> -->
                                     <!-- <option value="ru">Ru</option> -->
                                 </select>
-                            </div>
+                            </form>
 
-                            <div class="header_search_wrapper">
-                                <input type="text" name="search" placeholder="Qidirish">
+                            <form action="{% url 'common:search' %}" method="get" class="header_search_wrapper">
+                                <input type="text" name="q" placeholder="{% trans 'Qidirish' %}">
                                 <button type="submit"><i class="fa-regular fa-magnifying-glass"></i></button>
-                            </div>
+                            </form>
 
                             <div class="header_burger">
                                 <div class="line"></div>
                                 <div class="line"></div>
                                 <div class="line"></div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
                 <br>
@@ -118,11 +118,10 @@
                 <ul class="footer_list">
                     <li class="footer_item">
                         <p class="footer_title footer_text">
-                            ANDIJON VILOYATI HOKIMLIGI © 2009-2023
+                            {% trans 'ANDIJON VILOYATI HOKIMLIGI' %} © 2009-2023
                         </p>
                         <p class="footer_description footer_text">
-                            Materiallardan foydalanishda <br> Toshkent viloyati hokimligi <br> veb-saytiga havola
-                            qoying!
+                            {% trans 'Materiallardan foydalanishda' %} <br> {% trans 'Andijon viloyati hokimligi' %} <br> {% trans 'veb-saytiga havola qoying!' %}
                         </p>
                         <!-- <a href="./site_map.html" class="footer_map_link">
                             SAYT XARITASI

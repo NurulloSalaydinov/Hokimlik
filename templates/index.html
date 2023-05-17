@@ -1,4 +1,6 @@
 {% extends 'wrapper.html' %}
+{% load i18n %}
+{% block title %}| {% trans 'BOSH SAHIFA' %}{% endblock %}
 
 {% block content %}
     <main>
@@ -37,7 +39,7 @@
                         </div>
                         <div class="main-hero_side_bar_slider">
                             <h1 class="wrapper_title">
-                                RAHBARIYAT
+                                {% trans 'RAHBARIYAT' %}
                             </h1>
                             <div class="swiper">
                                 <div class="swiper-wrapper">
@@ -51,8 +53,7 @@
                                             <div class="main-hero_head_info">
                                                 {{ govern.content|safe }}
                                             </div>
-                                            <a href="{% url 'common:contact' %}" class="main-hero_contact_link" role="button">Murojaat
-                                                yuborish</a>
+                                            <a href="{% url 'common:contact' %}" class="main-hero_contact_link" role="button">{% trans 'Murojaat yuborish' %}</a>
                                         </div>
                                     </div>
                                     {% endfor %}
@@ -74,14 +75,14 @@
                                     <div class="main-numbers_wrapper">
                                         <ul class="main-hero_numbers_list">
                                             <li class="main-hero_numbers_item left">
-                                                <h3 class="main-hero_info_title">ISHONCH TELEFONI</h3>
+                                                <h3 class="main-hero_info_title">{% trans 'ISHONCH TELEFONI' %}</h3>
                                                 <h1 class="main-hero_number">
                                                     (0 371)
                                                     200 88 11
                                                 </h1>
                                             </li>
                                             <li class="main-hero_numbers_item right">
-                                                <h3 class="main-hero_info_title">YAGONA TELEFON</h3>
+                                                <h3 class="main-hero_info_title">{% trans 'YAGONA TELEFON' %}</h3>
                                                 <h1 class="main-hero_number">
                                                     (0 371)
                                                     200 88 11
@@ -94,7 +95,7 @@
                         </div>
                         <div class="main-hero_side_bar_slider">
                             <h1 class="wrapper_title small">
-                                AXBOROT XIZMATI RAHBARI
+                                {% trans 'AXBOROT XIZMATI RAHBARI' %}
                             </h1>
                             <div class="swiper_second">
                                 <div class="swiper-wrapper">
@@ -108,8 +109,7 @@
                                             <div class="main-hero_head_info">
                                                 {{ peop.content|safe }}
                                             </div>
-                                            <a href="{% url 'common:contact' %}" class="main-hero_contact_link" role="button">Murojaat
-                                                yuborish</a>
+                                            <a href="{% url 'common:contact' %}" class="main-hero_contact_link" role="button">{% trans 'Murojaat yuborish' %}</a>
                                         </div>
                                     </div>
                                     {% endfor %}
@@ -132,7 +132,7 @@
         <div class="news">
             <div class="section-wrapp">
                 <div class="container">
-                    <h1 class="wrapper_title">O` ZBEKISTON YANGILIKLARI</h1>
+                    <h1 class="wrapper_title">{% trans 'O`ZBEKISTON YANGILIKLARI' %}</h1>
                     <ul class="news_list">
                         {% for uz_new in uzbek_news %}
                         <li class="news_item">

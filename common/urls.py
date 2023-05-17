@@ -12,6 +12,7 @@ urlpatterns = [
     path('news/', views.news_list, name='news'),
     path('news/<slug:slug>/', views.news_detail, name='news_detail'),
     path('contact/', views.contact, name='contact'),
+    path('search/', views.search_results, name='search'),
     path('set-language/', views.set_language, name='set_language')
 ]
 

@@ -1,5 +1,7 @@
 {% extends 'wrapper.html' %}
 {% load static %}
+{% load i18n %}
+{% block title %}| {% trans 'YANGILIKLAR' %}{% endblock %}
 {% block content %}
     <main>
         <div class="cat-hero">
@@ -10,7 +12,7 @@
                             <ul class="nav_link_list">
                                 <li class="nav_link_item">
                                     <a href="{% url 'common:news' %}">
-                                        Yangiliklar
+                                        {% trans 'Yangiliklar' %}
                                     </a>
                                 </li>
                             </ul>
@@ -20,7 +22,7 @@
                             <li>
                                 <div class="links">
                                     <span class="link">
-                                        <a href="#">Bosh sahifa</a>
+                                        <a href="/">{% trans 'Bosh sahifa' %}</a>
                                     </span>
                                 </div>
                             </li>

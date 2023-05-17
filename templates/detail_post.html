@@ -1,4 +1,6 @@
 {% extends 'wrapper.html' %}
+{% load i18n %}
+{% block title %}| {{ detail.title }}{% endblock %}
 {% block content %}
 <main>
     <div class="detail_reg-hero">
@@ -21,7 +23,7 @@
                         <li>
                             <div class="links">
                                 <span class="link">
-                                    <a href="#">Bosh sahifa</a>
+                                    <a href="/">{% trans 'Bosh sahifa' %}</a>
                                 </span>
                                 <span class="link">
                                     <a href="#">
@@ -55,7 +57,7 @@
                                     <span>{{ detail.created_at }}</span>
                                 </li>
                                 <li class="detail-more_info_item share">
-                                    <span class="detail-share_text">Bo`lishish:</span>
+                                    <span class="detail-share_text">{% trans 'Bo`lishish' %}:</span>
 
                                     <a href="http://www.facebook.com/sharer.php?u=" class="detail-share_icon facebook">
                                         <i class="fa-brands fa-facebook-f"></i>
@@ -71,7 +73,7 @@
                                 </li>
                                 <li class="detail-more_info_item download">
                                     <a href="{{ pdf.pdf_file.url }}">
-                                        Yuklash
+                                        {% trans 'Yuklash' %}
                                         <span class="detail-share_icon ">
                                             <i class="fa-solid fa-download"></i>
                                         </span>

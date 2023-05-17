@@ -1,7 +1,7 @@
 {% extends 'wrapper.html' %}
 {% load static %}
 {% load i18n %}
-{% block title %}| {{ obj.title }}{% endblock %}
+{% block title %}| {% trans 'QIDIRUV' %}{% endblock %}
 {% block content %}
     <main>
         <div class="cat-hero">
@@ -27,23 +27,38 @@
                                         <a href="/">{% trans 'Bosh sahifa' %}</a>
                                     </span>
                                     <span class="link currently">
-                                        <i class="fa-regular fa-chevrons-right"></i> {{ obj.category.title }}
-                                        <i class="fa-regular fa-chevrons-right"></i> {{ obj.title }}
+                                        <i class="fa-regular fa-chevrons-right"></i> {% trans "So'rov" %}
+                                        <i class="fa-regular fa-chevrons-right"></i> <span replace="q"></span>
                                     </span>
                                 </div>
                             </li>
-                            <h1 class="detail-heading">{{ obj.title }}</h1>
-
-                            {% for detail in details %}
-                            <li class="cat_item">
-                                <img src="{{ detail.image.url }}" alt="{{ detail.title }}">
-
+                            <h1 class="detail-heading">{% trans "SO'ROV BO'YICHA QIDIRUV NATIJALARI" %}: <span replace="q"></span></h1>
+                            {% for detail in detail_list %}
+                            <li class="cat_item search">
                                 <div class="cat_info_wrapper">
+                                    <time>
+                                        {{ detail.created_at }}
+                                    </time>
                                     <a href="{{ detail.get_absolute_url }}" class="cat_detail_link">
                                         {{ detail.title }}
                                     </a>
                                     <p class="cat_body">
-                                        {{ detail.content|slice:"200"|safe }}...
+                                        {{ detail.content|slice:"200"|safe }} ...
+                                    </p>
+                                </div>
+                            </li>
+                            {% endfor %}
+                            {% for new in news_list %}
+                            <li class="cat_item search">
+                                <div class="cat_info_wrapper">
+                                    <time>
+                                        {{ new.created_at }}
+                                    </time>
+                                    <a href="{{ new.get_absolute_url }}" class="cat_detail_link">
+                                        {{ new.title }}
+                                    </a>
+                                    <p class="cat_body">
+                                        {{ new.content|slice:"200"|safe }} ...
                                     </p>
                                 </div>
                             </li>
@@ -57,6 +72,10 @@
     </main>
     <script src="{% static 'assets/lib/js/sticky.js' %}"></script>
     <script type="text/javascript">
+        search = window.location.search
+        let params = new URLSearchParams(search);
+        let q = params.get('q')
+        document.querySelectorAll('[replace="q"]').forEach(e => e.innerHTML = q)
         var a = new StickySidebar('#sidebar', {
             topSpacing: 50,
             bottomSpacing: -20,

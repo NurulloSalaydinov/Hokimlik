@@ -1,4 +1,6 @@
 {% extends 'wrapper.html' %}
+{% load i18n %}
+{% block title %}| {% trans 'Virtual murojaat' %} {% endblock %}
 {% block content %}
 
     <main>
@@ -6,11 +8,11 @@
             <div class="section-wrapp">
                 <div class="container">
                     <form method="post" class="contact-form">
-                        <h1 class="detail-heading">Virtual murojaat</h1>
+                        <h1 class="detail-heading">{% trans 'Virtual murojaat' %}</h1>
                         {% csrf_token %}
                         {{ form }}
 
-                        <button>Yuborish</button>
+                        <button>{% trans 'Yuborish' %}</button>
 
                     </form>
                 </div>
