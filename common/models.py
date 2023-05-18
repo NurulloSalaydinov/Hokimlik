@@ -8,11 +8,12 @@ from django.utils.translation import gettext_lazy as _
 class People(models.Model):
     image = models.ImageField(verbose_name=_('Rasm'), upload_to='government/%y/%m/%d/')
     who = models.CharField(verbose_name=_('Kimligi?'), max_length=255)
+    name = models.CharField(verbose_name=_('Ismi?'), max_length=255)
     content = RichTextField(verbose_name=_('Malumot'))
     is_governor = models.BooleanField(verbose_name=_('Rahbar?'), default=True)
 
     def __str__(self):
-        return f"{self.id} {self.who}"
+        return f"{self.id} {self.name} {self.who}"
 
     class Meta:
         verbose_name = 'Rahbariyat'

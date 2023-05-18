@@ -136,7 +136,7 @@
     flex-wrap: wrap;
 }
 
-.header_settings form {
+.header_settings .header_form_wrapper {
     display: flex;
     width: 100%;
     align-items: center;
@@ -154,6 +154,10 @@
 
 .header_search_wrapper input::placeholder {
     color: var(--color-primary);
+}
+
+.header_search_wrapper input {
+    height: 46px;
 }
 
 .header_settings select {
@@ -248,7 +252,7 @@
 }
 
 .header_navigation_name {
-    padding: 14px;
+    padding: 14px 22px;
 
     background: var(--color-white);
 
@@ -264,7 +268,7 @@
 
     margin-bottom: 20px;
 
-    font-size: 14px;
+    font-size: 16px;
 
     font-weight: 800;
 
@@ -456,22 +460,32 @@
 .main-hero_head_name {
     font-size: var(--size-text-small);
     color: var(--color-dark);
-    font-family: 'Roboto R';
+    font-family: 'Roboto B';
     font-weight: normal;
 }
 
-.main-hero_head_initial_info {
+.main-hero_head_info p {
     font-size: var(--size-text-small);
     margin: 10px 0;
     color: var(--color-dark-gray);
 }
 
-.main-hero_head_initial_info a {
+.main-hero_head_info strong,
+.main-hero_head_info b {
+    font-size: var(--size-text-small);
+    margin: 10px 0;
+    color: var(--color-dark-gray);
+    font-family: 'Roboto B';
+    font-weight: normal;
+}
+
+.main-hero_head_info a {
     font-size: var(--size-text-small);
     color: var(--color-primary);
 }
 
 .main-hero_contact_link {
+    margin-top: 20px;
     padding: 10px 20px;
     background: var(--color-primary);
     display: inline-block;
@@ -621,7 +635,7 @@
 .news_list {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .news_item {
@@ -767,10 +781,16 @@ footer {
     transform: translateY(-50%);
 }
 
-.detail-heading {
+.detail-heading,
+.detail-heading span {
     margin-top: 30px;
     font-size: var(--size-heading-small);
     font-family: 'Zona B';
+    color: var(--color-dark);
+}
+
+.detail-heading span {
+    color: var(--color-primary);
 }
 
 .wrapper_sidebar_section {
@@ -1367,4 +1387,8 @@ footer {
 
 .header_form_selection {
     display: flex;
+}
+
+main {
+    min-height: 40vh;
 }

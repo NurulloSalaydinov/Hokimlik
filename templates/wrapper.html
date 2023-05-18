@@ -54,7 +54,7 @@
                     </div>
 
                     <div class="header_settings">
-                        <div style="display:flex">
+                        <div style="display:flex" class="header_form_wrapper">
                             <form action="{% url 'common:set_language' %}" method="get" class="header_form_selection">
                                 {% get_current_language as LANGUAGE_CODE %}
                                 {% if LANGUAGE_CODE == 'ru' %}
@@ -143,7 +143,6 @@
                 </ul>
             </div>
         </div>
-
     </footer>
     {% if messages %}
     <div onclick="this.style.display = 'none'" style="background-color: rgba(0,0,0,0.5);width: 100%;height: 100vh;position: fixed;top:0;left:0;display: flex;align-items: center;justify-content: center;z-index:111111111">
@@ -166,11 +165,14 @@
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="{% static 'assets/lib/js/smooth-scroll.js' %}"></script>
-    <script src="{% static 'assets/lib/js/swiper_settings.js' %}"></script>
+    <script src="{% static './assets/lib/js/smooth-scroll.js' %}"></script>
+    <script src="{% static './assets/lib/js/sticky.js' %}"></script>
+    {% block scripts %}
+      
+    {% endblock scripts %}
 
-    <script src="{% static 'assets/js/main.js' %}"></script>
-    <script src="{% static 'assets/js/time.js' %}"></script>
+    <script src="{% static './assets/js/main.js' %}"></script>
+    <script src="{% static './assets/js/time.js' %}"></script>
 </body>
 
 </html>

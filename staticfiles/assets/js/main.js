@@ -73,7 +73,7 @@ header_burger.addEventListener('click', () => {
     }
     else {
         header_navigation_list.style.display = "flex"
-        header_navigation_list.style.maxHeight = header_navigation_list.scrollHeight + 450 + "px"
+        header_navigation_list.style.maxHeight = header_navigation_list.scrollHeight + "px"
     }
 
     header_navigation_item.forEach((element) => {
