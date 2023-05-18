@@ -173,3 +173,6 @@ class Contact(models.Model):
     def __str__(self):
         return f"{self.full_name}"
 
+    class Meta:
+        verbose_name = 'Aloqa'
+        verbose_name_plural = 'Aloqalar'

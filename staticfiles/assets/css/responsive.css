@@ -69,6 +69,15 @@
         justify-content: space-between;
         flex-wrap: wrap;
     }
+                .main-hero_side_bar_slider {
+                    display: none;
+                }
+                .main-hero_post_wrapper {
+                    width: 100%;
+                }
+                .main-hero_action_list {
+                    width: 100%;
+                }
 }
 
 @media screen and (max-width: 900px) {
@@ -109,9 +118,7 @@
         --size-heading-small: 28px;
     }
 
-    .main-hero_side_bar_slider {
-        display: none;
-    }
+
 
     .main-hero_post_wrapper {
         width: 100%;
@@ -416,13 +423,17 @@
         margin-top: 5%;
     }
 
-    .header_search_wrapper button {
+    .header_search_wrapper button,
+
+    .header_search_wrapper input {
         height: 44px;
     }
-
     .headers-mayor_fullname {
         margin-top: 5%;
     }
+                .header_settings select {
+                    height: auto;
+                }
 }
 
 @media screen and (max-width: 400px) {
