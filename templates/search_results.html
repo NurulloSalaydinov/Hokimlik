@@ -70,16 +70,21 @@
         </div>
 
     </main>
-    <script type="text/javascript">
-        search = window.location.search
-        let params = new URLSearchParams(search);
-        let q = params.get('q')
-        document.querySelectorAll('[replace="q"]').forEach(e => e.innerHTML = q)
-        var a = new StickySidebar('#sidebar', {
-            topSpacing: 50,
-            bottomSpacing: -20,
-            containerSelector: '.container',
-            innerWrapperSelector: '.sidebar__inner'
-        });
-    </script>
+
     {% endblock content %}
+
+
+    {% block scripts %}
+        <script type="text/javascript">
+            search = window.location.search
+            let params = new URLSearchParams(search);
+            let q = params.get('q')
+            document.querySelectorAll('[replace="q"]').forEach(e => e.innerHTML = q)
+            var a = new StickySidebar('#sidebar', {
+                topSpacing: 50,
+                bottomSpacing: -20,
+                containerSelector: '.container',
+                innerWrapperSelector: '.sidebar__inner'
+            });
+        </script>
+    {% endblock scripts %}
