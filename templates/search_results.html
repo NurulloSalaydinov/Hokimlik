@@ -1,0 +1,86 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}| {% trans 'QIDIRUV' %}{% endblock %}
+{% block content %}
+    <main>
+        <div class="cat-hero">
+            <div class="section-wrapp">
+                <div class="container">
+                    <div class="wrapper_sidebar_section main" id="main-content">
+                        <div class="nav_sidebar sidebar" id="sidebar">
+                            <ul class="nav_link_list">
+                                {% for sub in subcategories %}
+                                <li class="nav_link_item">
+                                    <a href="{{ sub.get_absolute_url }}">
+                                        {{ sub.title }}
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <ul class="cat_list content" id="content">
+                            <li>
+                                <div class="links">
+                                    <span class="link">
+                                        <a href="/">{% trans 'Bosh sahifa' %}</a>
+                                    </span>
+                                    <span class="link currently">
+                                        <i class="fa-regular fa-chevrons-right"></i> {% trans "So'rov" %}
+                                        <i class="fa-regular fa-chevrons-right"></i> <span replace="q"></span>
+                                    </span>
+                                </div>
+                            </li>
+                            <h1 class="detail-heading">{% trans "SO'ROV BO'YICHA QIDIRUV NATIJALARI" %}: <span replace="q"></span></h1>
+                            {% for detail in detail_list %}
+                            <li class="cat_item search">
+                                <div class="cat_info_wrapper">
+                                    <time>
+                                        {{ detail.created_at }}
+                                    </time>
+                                    <a href="{{ detail.get_absolute_url }}" class="cat_detail_link">
+                                        {{ detail.title }}
+                                    </a>
+                                    <p class="cat_body">
+                                        {{ detail.content|slice:"200"|safe }} ...
+                                    </p>
+                                </div>
+                            </li>
+                            {% endfor %}
+                            {% for new in news_list %}
+                            <li class="cat_item search">
+                                <div class="cat_info_wrapper">
+                                    <time>
+                                        {{ new.created_at }}
+                                    </time>
+                                    <a href="{{ new.get_absolute_url }}" class="cat_detail_link">
+                                        {{ new.title }}
+                                    </a>
+                                    <p class="cat_body">
+                                        {{ new.content|slice:"200"|safe }} ...
+                                    </p>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <script src="{% static 'assets/lib/js/sticky.js' %}"></script>
+    <script type="text/javascript">
+        search = window.location.search
+        let params = new URLSearchParams(search);
+        let q = params.get('q')
+        document.querySelectorAll('[replace="q"]').forEach(e => e.innerHTML = q)
+        var a = new StickySidebar('#sidebar', {
+            topSpacing: 50,
+            bottomSpacing: -20,
+            containerSelector: '.container',
+            innerWrapperSelector: '.sidebar__inner'
+        });
+    </script>
+    {% endblock content %}

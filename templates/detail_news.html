@@ -1,0 +1,96 @@
+{% extends 'wrapper.html' %}
+{% load i18n %}
+{% block title %}| {{ detail.title }}{% endblock %}
+{% block content %}
+<main>
+    <div class="detail_reg-hero">
+        <div class="section-wrapp">
+            <div class="container">
+                <div class="wrapper_sidebar_section main" id="main-content">
+                    <div class="nav_sidebar sidebar" id="sidebar">
+                        <ul class="nav_link_list">
+                            <li class="nav_link_item">
+                                <a href="{% url 'common:news' %}">
+                                    {% trans 'Yangiliklar' %}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <ul class="detail_reg content" id="content">
+                        <li>
+                            <div class="links">
+                                <span class="link">
+                                    <a href="/">{% trans 'Bosh sahifa' %}</a>
+                                </span>
+                                <span class="link">
+                                    <a href="/news/">
+                                        <i class="fa-regular fa-chevrons-right"></i> {% trans 'Yangiliklar' %}
+                                    </a>
+                                </span>
+                                <span class="link">
+                                    <a href="#">
+                                        <i class="fa-regular fa-chevrons-right"></i> {{ detail.title }}
+                                    </a>
+                                </span>
+                            </div>
+
+                            <h1 class="detail-heading detail_post-heading">{{ detail.title }}</h1>
+                            <img src="{{ detail.image.url }}" width="100%" alt="">
+                            <br>
+                            <br>
+                            {{ detail.content|safe }}
+                            <br>
+                            <br>
+                            {% if pdf.pdf_file.url %}
+                            <embed src="{{ pdf.pdf_file.url }}" width="100%" height="800px" />
+                            {% endif %}
+                            <ul class="detail-more_info">
+                                <li class="detail-more_info_item date">
+                                    <span>{{ detail.created_at }}</span>
+                                </li>
+                                <li class="detail-more_info_item share">
+                                    <span class="detail-share_text">{% trans 'Bo`lishish' %}:</span>
+
+                                    <a href="http://www.facebook.com/sharer.php?u=" class="detail-share_icon facebook">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+
+                                    <a href="https://twitter.com/share?url=" class="detail-share_icon twitter">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+
+                                    <a href="https://t.me/share/url?url=" class="detail-share_icon telegram">
+                                        <i class="fa-solid fa-paper-plane"></i>
+                                    </a>
+                                </li>
+                                <li class="detail-more_info_item download">
+                                    <a href="{{ pdf.pdf_file.url }}">
+                                        {% trans 'Yuklash' %}
+                                        <span class="detail-share_icon ">
+                                            <i class="fa-solid fa-download"></i>
+                                        </span>
+                                    </a>
+                                </li>
+
+                                <li class="detail-more_info_item view">
+                                    <i class="fa-solid fa-eye"></i>
+                                    {{ detail.views_count }}
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script type="text/javascript">
+    var a = new StickySidebar('#sidebar', {
+        topSpacing: 50,
+        bottomSpacing: -20,
+        containerSelector: '.container',
+        innerWrapperSelector: '.sidebar__inner'
+    });
+</script>
+{% endblock content %}

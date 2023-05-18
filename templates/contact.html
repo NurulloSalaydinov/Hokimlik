@@ -1,0 +1,40 @@
+{% extends 'wrapper.html' %}
+{% load i18n %}
+{% block title %}| {% trans 'Virtual murojaat' %} {% endblock %}
+{% block content %}
+
+    <main>
+        <div class="contact">
+            <div class="section-wrapp">
+                <div class="container">
+                    <form method="post" class="contact-form">
+                        <h1 class="detail-heading">{% trans 'Virtual murojaat' %}</h1>
+                        {% csrf_token %}
+                        {{ form }}
+
+                        <button>{% trans 'Yuborish' %}</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#id_phone").inputmask("(99)999-99-99");
+            $("#id_birthday").inputmask("99.99.9999");
+        });
+    </script>
+
+    
+<script>
+    AOS.init();
+</script>
+
+    {% endblock %}
