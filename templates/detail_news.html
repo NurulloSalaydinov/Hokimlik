@@ -85,12 +85,15 @@
         </div>
     </div>
 </main>
-<script type="text/javascript">
-    var a = new StickySidebar('#sidebar', {
-        topSpacing: 50,
-        bottomSpacing: -20,
-        containerSelector: '.container',
-        innerWrapperSelector: '.sidebar__inner'
-    });
-</script>
 {% endblock content %}
+
+    {% block scripts %}
+    <script type="text/javascript">
+        var a = new StickySidebar('#sidebar', {
+            topSpacing: 50,
+            bottomSpacing: -20,
+            containerSelector: '.container',
+            innerWrapperSelector: '.sidebar__inner'
+        });
+    </script>
+    {% endblock scripts %}

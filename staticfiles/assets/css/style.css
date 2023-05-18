@@ -826,7 +826,7 @@ footer {
 .cat_info_wrapper time {
     font-size: 14px;
     display: block;
-    font-family: 'Zona B';
+    font-family: 'Roboto B';
     font-weight: normal;
     color: var(--color-primary);
 }
@@ -877,6 +877,11 @@ footer {
 .cat_item a:hover {
     color: var(--color-primary);
     text-decoration: underline;
+}
+
+.cat_info_wrapper a {
+    color: var(--color-primary);
+    font-family: 'Roboto B';
 }
 
 .nav_link_item a {
