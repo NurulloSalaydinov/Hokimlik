@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
-from .models import Category, SubCategory, News, People, Pdf, Detail, PdfNews
+from .models import Category, SubCategory, News, People, Pdf, Detail, PdfNews, Tag
 from .forms import ContactForm
 
 

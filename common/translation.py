@@ -1,5 +1,5 @@
 from modeltranslation.translator import register, TranslationOptions
-from .models import People, Category, SubCategory, Detail, News
+from .models import People, Category, SubCategory, Detail, News, Tag, SubTag
 
 
 @register(People)
@@ -14,6 +14,16 @@ class CategoryTranslationOptions(TranslationOptions):
 
 @register(SubCategory)
 class SubCategoryTranslationOptions(TranslationOptions):
+    fields = ('title',)
+
+
+@register(Tag)
+class TagTranslationOptions(TranslationOptions):
+    fields = ('title',)
+
+
+@register(SubTag)
+class SubTagTranslationOptions(TranslationOptions):
     fields = ('title',)
 
 

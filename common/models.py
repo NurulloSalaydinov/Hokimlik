@@ -34,7 +34,7 @@ class Category(models.Model):
     
 
     def __str__(self):
-        return f"{self.id} {self.title}"
+        return f"{self.title}"
 
     class Meta:
         verbose_name = 'Turkum'
@@ -50,7 +50,7 @@ class SubCategory(models.Model):
         return reverse('common:subcategory', kwargs={'slug': self.slug})
 
     def __str__(self):
-        return f"{self.id} {self.title}"
+        return f"{self.title}"
 
     class Meta:
         verbose_name = 'Qoshimcha turkum'
@@ -71,7 +71,7 @@ class Detail(models.Model):
     
 
     def __str__(self):
-        return f"{self.id} {self.title}"
+        return f"{self.title}"
 
     class Meta:
         verbose_name = 'Malumot'
@@ -176,3 +176,38 @@ class Contact(models.Model):
     class Meta:
         verbose_name = 'Aloqa'
         verbose_name_plural = 'Aloqalar'
+
+
+class Tag(models.Model):
+    title = models.CharField(max_length=255, unique=True,
+                             verbose_name=_('Sarlavha'))
+
+    def __str__(self):
+        return f'{self.title}'
+
+    def get_subcategory(self):
+        tags = SubTag.objects.filter(tag=self)
+        return tags
+
+    class Meta:
+        verbose_name = 'Teg'
+        verbose_name_plural = 'Teglar'
+
+
+class SubTag(models.Model):
+    tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
+    image = models.ImageField(
+        upload_to='SubTag/%y/%m/%d/', verbose_name=_('Rasm'), null=True, blank=True)
+    title = models.CharField(max_length=255,
+                             verbose_name=_('Sarlavha'))
+
+    link = models.CharField(max_length=355, 
+                            verbose_name=_('Havola'))
+
+
+    def __str__(self):
+        return f'{self.title}'
+
+    class Meta:
+        verbose_name = 'Qoshimcha Teg'
+        verbose_name_plural = 'Qoshimcha Teglar'

@@ -17,7 +17,7 @@ header_navigation_item.forEach((element) => {
         });
         setTimeout(() => {
             inner_el.style.display = "flex"
-            inner_el.style.maxHeight = inner_el.scrollHeight + "px"
+            inner_el.style.maxHeight = inner_el.scrollHeight  + "px"
             inner_el_first.classList.add("active")
         }, 200)
     })
@@ -54,7 +54,7 @@ hero_action_item.forEach((element) => {
             });
             setTimeout(() => {
                 inner_el.style.display = "flex"
-                inner_el.style.maxHeight = inner_el.scrollHeight + "px"
+                inner_el.style.maxHeight = inner_el.scrollHeight  + "px"
                 inner_el_first.classList.add("active")
             }, 400)
         }
@@ -73,7 +73,7 @@ header_burger.addEventListener('click', () => {
     }
     else {
         header_navigation_list.style.display = "flex"
-        header_navigation_list.style.maxHeight = header_navigation_list.scrollHeight + "px"
+        header_navigation_list.style.maxHeight = header_navigation_list.scrollHeight + 600 + "px"
     }
 
     header_navigation_item.forEach((element) => {
