@@ -1,5 +1,15 @@
 from django.contrib import admin
-from .models import People, Category, SubCategory, Detail, News, Pdf, PdfNews, Contact
+from .models import (People,
+Category, 
+SubCategory, 
+Detail, 
+News,
+Pdf, 
+PdfNews, 
+Contact,
+SubTag, 
+Tag
+)
 
 
 @admin.register(People)
@@ -71,6 +81,19 @@ class NewsAdmin(admin.ModelAdmin):
 class ContactAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'email', 'phone', 'date')
     list_display_links = ('full_name',)
-    list_filter = ('businessman', 'province_select', 'job', 'date')
+
     search_fields = ('full_name', 'description')
 
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title')
+    list_display_links = ('id', 'title')
+    search_fields = ('title', )
+
+
+@admin.register(SubTag)
+class SubTagAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'tag')
+    list_display_links = ('id', 'title', 'tag')
+    list_filter = ('tag', )
+    search_fields = ('title', 'tag')

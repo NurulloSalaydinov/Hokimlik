@@ -176,8 +176,8 @@
 }
 
 .header_navigation_item {
-    margin-top: 10px;
-    margin-right: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
 }
 
 .header_navigation_item:nth-of-type(1) {
@@ -252,7 +252,7 @@
 }
 
 .header_navigation_name {
-    padding: 14px 22px;
+    padding: 18px 26px;
 
     background: var(--color-white);
 
@@ -609,6 +609,7 @@
 .main-hero_action_posts {
     position: absolute;
     left: 0;
+    width: 100%;
     display: none;
     max-height: 0;
     overflow: hidden;
