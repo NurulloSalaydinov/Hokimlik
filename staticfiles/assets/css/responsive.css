@@ -78,6 +78,12 @@
                 .main-hero_action_list {
                     width: 100%;
                 }
+.main-hero_action_list {
+    width: 100%;
+}
+.main-hero_action_wrapper {
+    width: 100%;
+}
 }
 
 @media screen and (max-width: 900px) {
@@ -214,6 +220,12 @@
     .main-numbers {
         width: 100%;
     }
+        .main-numbers_wrapper {
+            width: 100%;
+        }
+        .main-hero_numbers_item {
+            padding: 12px 0;
+        }
 }
 
 @media screen and (max-width: 600px) {
@@ -446,8 +458,7 @@
         --size-heading-large: 34px;
         --size-heading-small: 24px;
     }
-
-
+    
     .headers_item img {
         width: 100%;
     }
