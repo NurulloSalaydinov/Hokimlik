@@ -348,6 +348,10 @@
     width: 30%;
 }
 
+.main-hero_side_bar_slider.action {
+    margin-top: 10px;
+}
+
 .main-hero_post_wrapper {
     width: 68%;
 }
@@ -539,6 +543,13 @@
     align-items: center;
     position: relative;
     flex-wrap: wrap;
+    width: 100%;
+}
+
+.main-hero_action_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     width: 68%;
 }
 
@@ -559,22 +570,44 @@
     text-transform: uppercase;
     position: relative;
     z-index: 11;
-    box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+    border: 2px solid transparent;
 }
 
-.main-hero_action_item span.active {
-    background: var(--color-red);
-    color: var(--color-white);
+.main-hero_action_item.active span {
+    border: 2px solid var(--color-red);
     font-weight: 800;
     font-family: 'Roboto B';
-    box-shadow: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
 }
+
+
 
 .main-hero_action_post {
     position: relative;
     z-index: 140;
+    margin-top: 20px;
     width: 30%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.main-hero_action_post a {
+    width: 100%;
     padding: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-radius: 20px;
+    display: flex;
+    font-size: var(--size-text-small);
+    color: var(--color-dark);
+}
+
+.main-hero_action_post:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
 }
 
 .photo_gallery img {
@@ -589,17 +622,10 @@
     border-radius: 10px;
 }
 
-.main-hero_action_post a {
-    display: flex;
-    align-items: center;
-    font-size: var(--size-text-small);
-    color: var(--color-dark);
-}
-
 .main-hero_action_post a:hover {
     color: var(--color-primary);
     text-decoration: underline;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 1px;
 }
 
 .main-hero_action_post a img {
@@ -607,12 +633,6 @@
 }
 
 .main-hero_action_posts {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    display: none;
-    max-height: 0;
-    overflow: hidden;
     background: var(--color-white);
     display: flex;
     justify-content: space-between;
@@ -1329,6 +1349,7 @@ footer {
 }
 
 .main-numbers_wrapper {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;

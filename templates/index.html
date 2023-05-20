@@ -31,7 +31,7 @@
                                 </p>
                                 <h1 class="main-hero_smaller_post_title">
                                     <a href="{{ new.get_absolute_url }}">
-                                        {{ new.title }}
+                                        {{ new.title|slice:":70" }}...
                                     </a>
                                 </h1>
                             </div>
@@ -68,183 +68,122 @@
                     </div>
                 </div>
 
-                <div class="main-hero_actions">
-                        <ul class="main-hero_action_list">
-                            <li class="main-hero_action_item">
-                                <span class="active">XIZMATLAR</span>
-                                <ul class="main-hero_action_posts" style="max-height: 118px;">
-                                    <li class="main-hero_action_post">
-                                        <a href="#" class="main-hero_action_title">
-                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
-                                            INTERAKTIV XIZMATLAR
-                                        </a>
+                            <div class="main-hero_actions">
+                                <div class="main-hero_action_wrapper">
+                                <ul class="main-hero_action_list">
+                                    <li class="main-hero_action_item xizmatlar active">
+                                        <span class="active">XIZMATLAR</span>
                                     </li>
-                                    <li class="main-hero_action_post">
-                                        <a href="#" class="main-hero_action_title">
-                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
-                                            INTERAKTIV XIZMATLAR
-                                        </a>
+                                    <li class="main-hero_action_item bolimlar">
+                                        <span class="active">БЎЛИМЛАР</span>
                                     </li>
-                                    <li class="main-hero_action_post">
-                                        <a href="#" class="main-hero_action_title">
-                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
-                                            INTERAKTIV XIZMATLAR
-                                        </a>
+                                    <li class="main-hero_action_item xizmatlar">
+                                        <span class="active">XIZMATLAR</span>
                                     </li>
-                                    <li class="main-hero_action_post">
-                                        <a href="#" class="main-hero_action_title">
-                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
-                                            INTERAKTIV XIZMATLAR
-                                        </a>
-                                    </li>
-                        
-                                </ul>
-                            </li>
-                        
-                            <li class="main-hero_action_item">
-                                <span>BO`LIMLAR</span>
-                                <ul class="main-hero_action_posts">
-                                    <li class="main-hero_action_post">
-                                        <a href="#" class="main-hero_action_title">
-                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
-                                            INTERAKTIV XIZMATLAR
-                                        </a>
-                                    </li>
-                                    <li class="main-hero_action_post">
-                                        <a href="#" class="main-hero_action_title">
-                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
-                                            INTERAKTIV XIZMATLAR
-                                        </a>
-                                    </li>
-                                    <li class="main-hero_action_post">
-                                        <a href="#" class="main-hero_action_title">
-                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
-                                            INTERAKTIV XIZMATLAR
-                                        </a>
-                                    </li>
-                                    <li class="main-hero_action_post">
-                                        <a href="#" class="main-hero_action_title">
-                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
-                                            INTERAKTIV XIZMATLAR
-                                        </a>
-                                    </li>
-                        
-                                </ul>
-                            </li>
-                        
-                            <li class="main-hero_action_item">
-                                <span>Foydali havolalar</span>
-                                <ul class="main-hero_action_posts">
-                                    <li class="main-hero_action_post">
-                                        <a href="#" class="main-hero_action_title">
-                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
-                                            INTERAKTIV XIZMATLAR
-                                        </a>
-                                    </li>
-                                    <li class="main-hero_action_post">
-                                        <a href="#" class="main-hero_action_title">
-                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
-                                            BO`LIMLAR
-                                        </a>
-                                    </li>
-                                    <li class="main-hero_action_post">
-                                        <a href="#" class="main-hero_action_title">
-                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
-                                            INTERAKTIV XIZMATLAR
-                                        </a>
-                                    </li>
-                                    <li class="main-hero_action_post">
-                                        <a href="#" class="main-hero_action_title">
-                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
-                                            INTERAKTIV XIZMATLAR
-                                        </a>
-                                    </li>
-                        
-                                </ul>
-                            </li>
-                        
-                            <li class="main-hero_action_item">
-                                <span>FOTOGALEREYA</span>
-                                <ul class="main-hero_action_posts photo_gallery">
-                                    <li class="main-hero_action_post">
-                                        <img src="./assets/img/bustonlik-hokimi-300x300.jpg" alt="">
-                                    </li>
-                                    <li class="main-hero_action_post">
-                                        <img src="./assets/img/bustonlik-hokimi-300x300.jpg" alt="">
-                                    </li>
-                                    <li class="main-hero_action_post">
-                                        <img src="./assets/img/bustonlik-hokimi-300x300.jpg" alt="">
+                                    <li class="main-hero_action_item xizmatlar">
+                                        <span class="active">XIZMATLAR</span>
                                     </li>
                                 </ul>
-                            </li>
 
-                                                        <li class="main-hero_action_item">
-                                                            <span>VIDEOGALEREYA</span>
-                                                            <ul class="main-hero_action_posts photo_gallery">
-                                                                <li class="main-hero_action_post">
-                                                                    <video src="https://media.utube.uz/videos/ab603ee4bc2240297bb4961073251ec5.mp4" controls=""></video>
-                                                                </li>
-                                                                <li class="main-hero_action_post">
-                                                                    <video src="https://media.utube.uz/videos/ab603ee4bc2240297bb4961073251ec5.mp4" controls=""></video>
-                                                                </li>
-                                                                <li class="main-hero_action_post">
-                                                                    <video src="https://media.utube.uz/videos/ab603ee4bc2240297bb4961073251ec5.mp4" controls=""></video>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                        </ul>
-                    <div class="main-hero_side_bar_slider">
-                        <h1 class="wrapper_title small">
-                            {% trans 'AXBOROT XIZMATI RAHBARI' %}
-                        </h1>
-                        <div class="swiper_second">
-                            <div class="swiper-wrapper">
-                                {% for peop in news_people %}
-                                <div class="swiper-slide">
-                                    <div class="main-hero_head_wrapper">
-                                        <img src="{{ peop.image.url }}" alt="{{ peop.who }}">
-                                        <div class="main-hero_head_title">
-                                            {{ peop.who }}
+                                <ul class="main-hero_action_posts xizmatlar">
+                                    <li class="main-hero_action_post">
+                                        <a href="#" class="main-hero_action_title">
+                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
+                                            ИНТЕРАКТИВ ХИЗМАТЛАР
+                                        </a>
+                                    </li>
+                                    <li class="main-hero_action_post">
+                                        <a href="#" class="main-hero_action_title">
+                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
+                                            ОЧИҚ МАЪЛУМОТЛАР
+                                        </a>
+                                    </li>
+                                    <li class="main-hero_action_post">
+                                        <a href="#" class="main-hero_action_title">
+                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
+                                            ХАЛҚ ДЕПУТАТЛАРИ ТОШКЕНТ ВИЛОЯТИ КЕНГАШИ
+                                        </a>
+                                    </li>
+                                    <div class="main-numbers_wrapper">
+                                        <ul class="main-hero_numbers_list">
+                                            <li class="main-hero_numbers_item left">
+                                                <h3 class="main-hero_info_title">{% trans 'ISHONCH TELEFONI' %}</h3>
+                                                <h1 class="main-hero_number">
+                                                    (0 371)
+                                                    200 88 11
+                                                </h1>
+                                            </li>
+                                            <li class="main-hero_numbers_item right">
+                                                <h3 class="main-hero_info_title">{% trans 'YAGONA TELEFON' %}</h3>
+                                                <h1 class="main-hero_number">
+                                                    (0 371)
+                                                    200 88 11
+                                                </h1>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </ul>
+
+                                <ul class="main-hero_action_posts bolimlar" style="display: none;">
+                                    <li class="main-hero_action_post">
+                                        <a href="#" class="main-hero_action_title">
+                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
+                                            TEST 5
+                                        </a>
+                                    </li>
+                                    <li class="main-hero_action_post">
+                                        <a href="#" class="main-hero_action_title">
+                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
+                                            TEST 6
+                                        </a>
+                                    </li>
+                                    <li class="main-hero_action_post">
+                                        <a href="#" class="main-hero_action_title">
+                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
+                                            TEST 7
+                                        </a>
+                                    </li>
+                                    <li class="main-hero_action_post">
+                                        <a href="#" class="main-hero_action_title">
+                                            <img class="main-hero_action_img" src="./assets/img/vil-serv-1.png" alt="">
+                                            TEST 8
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                </div>
+                                <div class="main-hero_side_bar_slider action">
+                                    <h1 class="wrapper_title small">
+                                        {% trans 'AXBOROT XIZMATI RAHBARI' %}
+                                    </h1>
+                                    <div class="swiper_second">
+                                        <div class="swiper-wrapper">
+                                            {% for peop in news_people %}
+                                            <div class="swiper-slide">
+                                                <div class="main-hero_head_wrapper">
+                                                    <img src="{{ peop.image.url }}" alt="{{ peop.who }}">
+                                                    <div class="main-hero_head_title">
+                                                        {{ peop.who }}
+                                                    </div>
+                                                    <div class="main-hero_head_info">
+                                                        {{ peop.content|safe }}
+                                                    </div>
+                                                    <a href="{% url 'common:contact' %}" class="main-hero_contact_link" role="button">{% trans
+                                                        'Murojaat yuborish' %}</a>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
                                         </div>
-                                        <div class="main-hero_head_info">
-                                            {{ peop.content|safe }}
-                                        </div>
-                                        <a href="{% url 'common:contact' %}" class="main-hero_contact_link"
-                                            role="button">{% trans 'Murojaat yuborish' %}</a>
                                     </div>
                                 </div>
-                                {% endfor %}
                             </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-                    <div class="main-numbers">
-                        <div class="section-wrapp">
-                            <div class="number_container">
-                                <div class="main-numbers_wrapper">
-                                    <ul class="main-hero_numbers_list">
-                                        <li class="main-hero_numbers_item left">
-                                            <h3 class="main-hero_info_title">{% trans 'ISHONCH TELEFONI' %}</h3>
-                                            <h1 class="main-hero_number">
-                                                (0 371)
-                                                200 88 11
-                                            </h1>
-                                        </li>
-                                        <li class="main-hero_numbers_item right">
-                                            <h3 class="main-hero_info_title">{% trans 'YAGONA TELEFON' %}</h3>
-                                            <h1 class="main-hero_number">
-                                                (0 371)
-                                                200 88 11
-                                            </h1>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+
+
+
 
 
     <div class="news">
@@ -258,7 +197,7 @@
                         <p class="news_date"><i class="fa-regular fa-clock"></i> {{ uz_new.created_at }}</p>
                         <h1 class="news_link">
                             <a href="{{ uz_new.get_absolute_url }}">
-                                {{ uz_new.title }}
+                                {{ uz_new.title|slice:":70" }}...
                             </a>
                         </h1>
                     </li>
