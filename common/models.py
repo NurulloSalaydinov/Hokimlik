@@ -25,7 +25,7 @@ class Category(models.Model):
     slug = models.SlugField(verbose_name=_('*'))
 
     def get_subcategory(self):
-        subcategories = SubCategory.objects.filter(category=self)
+        subcategories = SubCategory.objects.select_related('category').filter(category=self)
         return subcategories
 
     def get_absolute_url(self):
@@ -186,8 +186,8 @@ class Tag(models.Model):
         return f'{self.title}'
 
     def get_subcategory(self):
-        tags = SubTag.objects.filter(tag=self)
-        return tags
+        subtags = SubTag.objects.select_related('tag').filter(tag=self)
+        return subtags
 
     class Meta:
         verbose_name = 'Teg'
