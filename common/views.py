@@ -38,10 +38,12 @@ def subcategory_detail(request, slug):
     subcategory = get_object_or_404(SubCategory.objects.select_related('category'), slug=slug)
     subcategories = SubCategory.objects.select_related('category').filter(category=subcategory.category)
     details = Detail.objects.filter(subcategory=subcategory)
+    news = News.objects.filter(categories__in=[subcategory.id])
     context = {
         'subcategories': subcategories,
         'details': details,
-        'obj': subcategory
+        'obj': subcategory,
+        'news': news
     }
 
     return render(request, 'regions.html', context)

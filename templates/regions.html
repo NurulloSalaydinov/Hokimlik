@@ -48,6 +48,20 @@
                                 </div>
                             </li>
                             {% endfor %}
+                            {% for new in news %}
+                            <li class="cat_item">
+                                <img src="{{ new.image.url }}" alt="{{ new.title }}">
+
+                                <div class="cat_info_wrapper">
+                                    <a href="{{ new.get_absolute_url }}" class="cat_detail_link">
+                                        {{ new.title }}
+                                    </a>
+                                    <p class="cat_body">
+                                        {{ new.content|slice:"200"|safe }}...
+                                    </p>
+                                </div>
+                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
