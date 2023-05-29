@@ -429,7 +429,7 @@
 
 .main-hero_head_wrapper {
     padding: 20px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .main-hero_head_wrapper img {
@@ -604,6 +604,20 @@
     display: flex;
     font-size: var(--size-text-small);
     color: var(--color-dark);
+}
+
+
+.main-hero_action_post a img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+}
+
+.main-hero_action_posts.fotogalereya {}
+
+.main-hero_action_posts.fotogalereya a img {
+    width: 100%;
+    object-fit: cover;
 }
 
 .main-hero_action_post:hover {
