@@ -1522,7 +1522,7 @@ msgstr "АНДИЖАНСКАЯ ГОРОДСКАЯ УПРАВЛЕНИЕ"
 
 #: .\templates\wrapper.html:79
 msgid "Qidirish"
-msgstr ""
+msgstr "Поиск"
 
 #: .\templates\wrapper.html:121
 msgid "ANDIJON VILOYATI HOKIMLIGI"

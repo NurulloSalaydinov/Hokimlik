@@ -25,7 +25,7 @@ class Category(models.Model):
     slug = models.SlugField(verbose_name=_('*'))
 
     def get_subcategory(self):
-        subcategories = SubCategory.objects.filter(category=self)
+        subcategories = SubCategory.objects.select_related('category').filter(category=self)
         return subcategories
 
     def get_absolute_url(self):
@@ -94,6 +94,7 @@ class Pdf(models.Model):
 class News(models.Model):
     title = models.CharField(verbose_name=_('Yangilik uchun sarlavha'), max_length=255)
     slug = models.SlugField(verbose_name=_('*'))
+    categories = models.ManyToManyField(SubCategory, blank=True, verbose_name='Turkumi (shart emas)')
     image = models.ImageField(upload_to='news_images/%y/%m/%d/', verbose_name=_('Rasm'), blank=True, null=True)
     content = RichTextField(verbose_name=_('Kontent'))
     views_count = models.PositiveIntegerField(verbose_name=_('Korilganlar soni'), default=0)
@@ -186,8 +187,8 @@ class Tag(models.Model):
         return f'{self.title}'
 
     def get_subcategory(self):
-        tags = SubTag.objects.filter(tag=self)
-        return tags
+        subtags = SubTag.objects.select_related('tag').filter(tag=self)
+        return subtags
 
     class Meta:
         verbose_name = 'Teg'
